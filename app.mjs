@@ -8,9 +8,13 @@ import { fileURLToPath } from 'url';
 import indexRouter from './routes/index.mjs';
 import usersRouter from './routes/users.mjs';
 import { default as catalogRouter } from './routes/catalog.mjs';
+import compression from 'compression';
+import helmet from 'helmet';
 import 'dotenv/config';
 
 const app = e();
+app.use(helmet());
+app.use(compression());
 
 // mongoose setup
 import mongoose from 'mongoose';
