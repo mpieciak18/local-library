@@ -169,7 +169,7 @@ export function genre_update_get(req, res, next) {
 		}
 		if (genre == null) {
 			// No results.
-			var err = new Error('Genre not found');
+			const err = new Error('Genre not found');
 			err.status = 404;
 			return next(err);
 		}

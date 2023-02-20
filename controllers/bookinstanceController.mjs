@@ -145,7 +145,7 @@ export function bookinstance_delete_post(req, res, next) {
 			}
 			if (results.bookinstance == null) {
 				// No results.
-				var err = new Error('Book copy not found');
+				const err = new Error('Book copy not found');
 				err.status = 404;
 				return next(err);
 			}
