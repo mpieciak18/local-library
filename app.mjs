@@ -18,7 +18,9 @@ app.use(compression());
 
 // mongoose setup
 import mongoose from 'mongoose';
-const url = process.env.API_KEY;
+const url =
+	process.env.API_KEY ||
+	'mongodb+srv://your_user_name:your_password@cluster0.lz91hw2.mongodb.net/local_library?retryWrites=true&w=majority';
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
